@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <title>Ómar Interactivo</title>
@@ -7,46 +7,101 @@
     html, body {
       margin: 0;
       padding: 0;
-      width: 100%;
       height: 100%;
+      width: 100%;
+      font-family: sans-serif;
+      background: #f7f7f7;
       display: flex;
       flex-direction: column;
+      justify-content: flex-end;
       align-items: center;
-      justify-content: center;
-      font-family: sans-serif;
-      background: #f8f9fa;
-    }
-    h1 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
     }
     .cta {
-      padding: 0.8rem 1.6rem;
-      font-size: 1rem;
+      margin-bottom: 40px;
+      padding: 12px 24px;
       background-color: #6c63ff;
       color: white;
       border: none;
       border-radius: 8px;
-      cursor: pointer;
+      font-size: 1rem;
       text-decoration: none;
-      margin-bottom: 2rem;
-    }
-    iframe {
-      width: 90%;
-      max-width: 720px;
-      aspect-ratio: 16/9;
-      border: none;
-      border-radius: 12px;
-      box-shadow: 0px 12px 24px rgba(0,0,0,0.15);
+      cursor: pointer;
+      z-index: 1;
     }
   </style>
 </head>
 <body>
-  <h1>¡Hola! Elige tu idioma e inicia la conversación con mi Clon interactivo</h1>
-  <a href="https://www.victory2050.com/es/booking-calendar/managed-it-services" class="cta">Agenda una reunión conmigo</a>
-  <iframe
-    src="https://labs.heygen.com/interactive-avatar/share?share=eyJxdWFsaXR5IjoiaGlnaCIsImF2YXRhck5hbWUiOiJmNDdhNzI5MTc0OTI0YTViOTZiZTNlYTkxMThiMWI2YiIsInByZXZpZXdJbWciOiJodHRwczovL2ZpbGVzMi5oZXlnZW4uYWkvYXZhdGFyL3YzL2Y0N2E3MjkxNzQ5MjRhNWI5NmJlM2VhOTExOGIxYjZiL2Z1bGwvMi4yL3ByZXZpZXdfdGFyZ2V0LndlYnAiLCJuZWVkUmVtb3ZlQmFja2dyb3VuZCI6ZmFsc2UsImtub3dsZWRnZUJhc2VJZCI6IjQyMGZhOWVkMDEzZTQ5ODQ4NWQ2NzcyODNkMTgxYzAwIiwic2hhcmVfY29kZSI6IjM5Yjc3NmMyLWM4Y2EtNDU3Zi1hZjYxLWZjNDgxYjU5ZmFiZSIsInVzZXJuYW1lIjoiNmZlNmYxMzAyMzU4NGU2MjhiYmU4YWMxMGQ1ZTczZTIifQ%3D%3D"
-    allow="microphone">
-  </iframe>
+  <a href="https://tuagenda.com/omar" class="cta">Agendá una reunión conmigo</a>
+
+  <script>
+  !function(window){
+    const host = "https://labs.heygen.com",
+    url = host+"/guest/streaming-embed?share=eyJxdWFsaXR5IjoiaGlnaCIsImF2YXRhck5hbWUiOiJmNDdhNzI5MTc0OTI0YTViOTZiZTNlYTkxMThiMWI2YiIsInByZXZpZXdJbWciOiJodHRwczovL2ZpbGVzMi5oZXlnZW4uYWkvYXZhdGFyL3YzL2Y0N2E3MjkxNzQ5MjRhNWI5NmJlM2VhOTExOGIxYjZiL2Z1bGwvMi4yL3ByZXZpZXdfdGFyZ2V0LndlYnAiLCJuZWVkUmVtb3ZlQmFja2dyb3VuZCI6ZmFsc2UsImtub3dsZWRnZUJhc2VJZCI6IjQyMGZhOWVkMDEzZTQ5ODQ4NWQ2NzcyODNkMTgxYzAwIiwidXNlcm5hbWUiOiI2ZmU2ZjEzMDIzNTg0ZTYyOGJiZThhYzEwZDVlNzNlMiJ9&inIFrame=1",
+    clientWidth = document.body.clientWidth,
+    wrapDiv = document.createElement("div");
+
+    wrapDiv.id = "heygen-streaming-embed";
+    const container = document.createElement("div");
+    container.id = "heygen-streaming-container";
+
+    const stylesheet = document.createElement("style");
+    stylesheet.innerHTML = `
+      #heygen-streaming-embed {
+        z-index: 9999;
+        position: fixed;
+        left: 40px;
+        bottom: 100px;
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        border: 2px solid #fff;
+        box-shadow: 0px 8px 24px 0px rgba(0, 0, 0, 0.12);
+        transition: all linear 0.1s;
+        overflow: hidden;
+        opacity: 0;
+        visibility: hidden;
+      }
+      #heygen-streaming-embed.show {
+        opacity: 1;
+        visibility: visible;
+      }
+      #heygen-streaming-embed.expand {
+        ${clientWidth < 540 ? "height: 266px; width: 96%; left: 50%; transform: translateX(-50%);" : "height: 366px; width: calc(366px * 16 / 9);"}
+        border: 0;
+        border-radius: 8px;
+      }
+      #heygen-streaming-container {
+        width: 100%;
+        height: 100%;
+      }
+      #heygen-streaming-container iframe {
+        width: 100%;
+        height: 100%;
+        border: 0;
+      }
+    `;
+
+    const iframe = document.createElement("iframe");
+    iframe.allowFullscreen = !1;
+    iframe.title = "Streaming Embed";
+    iframe.role = "dialog";
+    iframe.allow = "microphone";
+    iframe.src = url;
+
+    let visible = !1, initial = !1;
+    window.addEventListener("message", (e => {
+      e.origin === host && e.data && e.data.type && "streaming-embed" === e.data.type && (
+        "init" === e.data.action ? (initial = !0, wrapDiv.classList.toggle("show", initial)) :
+        "show" === e.data.action ? (visible = !0, wrapDiv.classList.toggle("expand", visible)) :
+        "hide" === e.data.action && (visible = !1, wrapDiv.classList.toggle("expand", visible))
+      );
+    }));
+
+    container.appendChild(iframe);
+    wrapDiv.appendChild(stylesheet);
+    wrapDiv.appendChild(container);
+    document.body.appendChild(wrapDiv);
+  }(globalThis);
+  </script>
 </body>
 </html>
