@@ -35,6 +35,35 @@
       display: block;
       margin: 10px auto 5px;
     }
+    .playbook-row{
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 18px;
+}
+
+.cover{
+  width: 160px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0px 10px 30px rgba(0,0,0,0.18);
+}
+
+.playbook-links{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 0.95rem;
+}
+
+.playbook-links a{
+  color: #333;
+  text-decoration: underline;
+}
+
+.playbook-links a:hover{
+  opacity: 0.7;
+}
   </style>
 </head>
 <body>
@@ -50,7 +79,20 @@
 </p>
   <a href="https://www.victory2050.com/playbook2026" class="cta">Luego, aquí podrás encontrar el playbook Victory 2026.
   </a>
-  
+<div class="playbook-row">
+  <img
+    src="https://raw.githubusercontent.com/omardeturnario/Interactive/main/cover3d-2608458-1.png"
+    alt="Cover Victory"
+    class="cover"
+  />
+
+  <div class="playbook-links">
+    <a href="https://www.victory2050.com/es">Inicio</a>
+    <a href="https://www.victory2050.com/es/about">Reseñas en medios</a>
+    <a href="https://calendly.com/victory2050">Agendar un espacio</a>
+    <a href="mailto:onboarding@thevictory.games">onboarding@thevictory.games</a>
+  </div>
+</div>
   <img
     src="https://raw.githubusercontent.com/omardeturnario/Interactive/main/cover3d-2608458-1.png"
     alt="Cover Victory"
