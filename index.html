@@ -19,6 +19,17 @@
   width: fit-content;
   max-width: 190vw;
   text-align: center;
+      .bg{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+  opacity: 0.9;
+  pointer-events: none;
+}
 }
     html, body {
       margin: 300;
@@ -32,7 +43,7 @@
       justify-content: flex-end;
       align-items: left;
       <img
-  src="https://raw.githubusercontent.com/omardeturnario/Interactive/main/Ondas%20suaves%20en%20tonos%20lavanda.png"
+  src="https://raw.githubusercontent.com/omardeturnario/Interactive/main/Ondas.png"
   alt="Fondo Victory"
   class="bg"
 />
@@ -104,20 +115,11 @@
   </div>
   </div>
 <img
+<img
   src="https://raw.githubusercontent.com/omardeturnario/Interactive/main/Ondas%20suaves%20en%20tonos%20lavanda.png"
   alt="Background Victory"
-  class="Background"
-  .bg{
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  object-fit: cover;
-  z-index: -1;
-  opacity: 0.9;
-  pointer-events: none;
-}
+  class="bg"
+/>
 />
   <script>
   !function(window){
