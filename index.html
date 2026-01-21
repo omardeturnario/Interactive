@@ -17,7 +17,7 @@
   z-index: 1;
   display: inline-block;
   width: fit-content;
-  max-width: 90vw;
+  max-width: 190vw;
   text-align: center;
 }
     html, body {
@@ -26,11 +26,16 @@
       height: 100%;
       width: 100%;
       font-family: sans-serif;
-      background: #f7f7f7;
+      background: transparent;
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
       align-items: left;
+      <img
+  src="https://raw.githubusercontent.com/omardeturnario/Interactive/main/Ondas%20suaves%20en%20tonos%20lavanda.png"
+  alt="Fondo Victory"
+  class="bg"
+/>
     }
     .cover {
       width: 30%;
@@ -102,10 +107,18 @@
   src="https://raw.githubusercontent.com/omardeturnario/Interactive/main/Ondas%20suaves%20en%20tonos%20lavanda.png"
   alt="Background Victory"
   class="Background"
+  .bg{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+  opacity: 0.9;
+  pointer-events: none;
+}
 />
-
-<a href="https://www.victory2050.com/es">Página Inicio Victory</a>
-
   <script>
   !function(window){
     const host = "https://labs.heygen.com",
