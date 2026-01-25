@@ -48,29 +48,25 @@
   class="bg"
 />
     }
-    .cover {
-      width: 20%;
-      max-width: 150px;
-      height: auto;
-      display: block;
-      margin: -20px auto 0px;
-        cursor: pointer;
-      .cover:hover{
-        opacity: 0.9;
-    }
-    .playbook-row{
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  margin-top: 0px;
+  .cover-link{
+  display: block;
+  margin: 14px auto 0;
 }
+
 .cover{
-  width: 800px;
+  width: 150px;
+  max-width: 45vw;
   height: auto;
-  border-radius: 0px;
-  box-shadow: 0px 0px 0px rgba(0,0,0,0.0);
-  margin-left: -100;
-  margin-right: auto;
+  display: block;
+  margin: 0 auto;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.cover:hover{
+  transform: scale(1.03);
+  opacity: 0.92;
 }
   </style>
 </head>
@@ -85,17 +81,17 @@
   <br> 🟣 Permítale una pausa antes de responder. Interrúmpale cuando quiera
   <br> 🟣 Su conversación es privada. No se almacenan datos 😉
 </p>
-  <a href="https://www.victory2050.com/playbook2026" class="cta">Luego, aquí podrá encontrar el Playbook Victory 2026.
-  </a>
-</div>
-<a href="https://www.victory2050.com/playbook2026" target="_blank" rel="noopener">
+<a href="https://www.victory2050.com/playbook2026" class="cta">
+  Luego, aquí podrá encontrar el Playbook Victory 2026.
+</a>
+
+<a href="https://www.victory2050.com/playbook2026" target="_blank" rel="noopener" class="cover-link">
   <img
     src="https://raw.githubusercontent.com/victory2050/Interactive/main/cover3dPLAYBOOKvictory.png"
     alt="Cover Victory"
     class="cover"
-</a>
   />
-<img
+</a>
 <img
   src="https://raw.githubusercontent.com/victory2050/Interactive/main/Ondas3.png"
   alt="Background Victory"
